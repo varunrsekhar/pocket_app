@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://hrb-qa-cloud.hrblock.net/content/dam/dev/angular-tools/tools-loader.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -39,8 +40,9 @@
                 <h1 class="hero-title">Your Apps, <span class="highlight">Anywhere</span></h1>
                 <p class="hero-subtitle">Carry your favorite applications on a USB drive and run them on any computer without installation</p>
                 <div class="hero-buttons">
-                    <a href="#apps" class="btn btn-primary">Explore Apps</a>
-                    <a href="#features" class="btn btn-secondary">Learn More</a>
+                    <a href="javascript:void(0);"
+                onclick="_openAppSettingPortableTool({'type':'','method':'GENERAL_TAX_PREP_METHOD','filter':'','amNotes':''});"
+                class="btn btn-primary">Appointment Settings</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -60,7 +62,9 @@
             </div>
         </div>
     </section>
-
+      <appointment-setting-lite data-type="" data-method="" data-filter=""
+    data-options='{"contextPath":"https://www.hrblock.com","servicePath":"https://www.hrblock.com","filter":"","guaAuthenticatePath":"https://account.hrblock.com/"}'>
+</appointment-setting-lite>
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
