@@ -110,48 +110,6 @@ contactForm.addEventListener('submit', (e) => {
     }, 5000);
 });
 
-// Intersection Observer for scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Add animation styles
-const animationStyle = document.createElement('style');
-animationStyle.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .feature-card,
-    .app-card,
-    .benefit-item {
-        opacity: 0;
-    }
-`;
-document.head.appendChild(animationStyle);
-
-// Observe elements
-document.querySelectorAll('.feature-card, .app-card, .benefit-item').forEach(el => {
-    observer.observe(el);
-});
-
 // Add floating animation to hero cards on mouse move
 const heroImage = document.querySelector('.hero-image');
 if (heroImage) {
@@ -192,14 +150,5 @@ function animateCounter(element, target, duration = 2000) {
         }
     }, 16);
 }
-
-// Add parallax effect to hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
 
 console.log('🚀 Portable Apps website loaded successfully!');
